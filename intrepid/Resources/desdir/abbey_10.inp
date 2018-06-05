@@ -1,0 +1,64 @@
+%TABLE LOCATIONS
+% NAME++++ CITYNAME++++++++++++ POSTCODE+ LATITUDE+ LONGITUDE TYPE PARENT++
+  CC       Milton Keynes        Dunno     50N22.23  4W08.53   ENDE CC
+  PORT     Portsmouth           PO15 7HU  53N57.55  1W04.79   BOTH PORT
+  BOUR44   BOURNEMOUTH CR       BH2 5RH   51N33.43  0W17.82   BOTH BOUR44  
+  SHEF235  SHEFFIELD PS         S1 1UX    51N27.20  0W00.54   BOTH SHEF235 
+  BIRM308  BIRMINGHAM SP        B2 4PY    53N14.11  1W26.05   BOTH BIRM308 
+  DIDS354  DIDSBURY             M20 6DQ   52N34.34  0W14.48   BOTH DIDS354 
+  Midd1030 Middlesbrough LR     TS1  1RQ  53N11.38  2W53.24   BOTH Midd1030
+  MOOR2    MOORGATE CCO         EC2R 6DE  52N11.79  2W13.52   BOTH MOOR2   
+  BIRM4    BIRMINGHAM BH        B2 5RF    51N32.13  0W14.72   BOTH BIRM4   
+  BRIG5    BRIGHTON WR          BN1 2EB   50N15.65  5W03.13   BOTH BRIG5   
+
+%TABLE LINETYPES
+% SVTY SPEEDIN++ UNITS DUPLEXITY TYPE FIXED_COST DIST1 DIST_COST1 DIST_COST2
+  D64      64000   bps         F   LS     171.67    15       9.33       0.56
+  F128    128000   bps         F   LS     473.33    15       1.50       1.50
+  F256    256000   bps         F   LS     513.33    15       3.00       3.00
+  F512    512000   bps         F   LS     593.33    15       6.00       6.00
+  T1     2048000   bps         F   T1     657.13    15      27.08      13.33 
+
+%TABLE EQUIPMENT
+% BOX_MODEL+++ FUNCTION DEFAULT BOX_COST ADAPT_CST MAX_LINKS_LS MAX_LINKS_T1 MAX_LINKS_T3
+  SMALL             MUX    1000       10         0           10            0            0
+  MEDIUM            MUX    5000      100         0           10           10            0
+  LARGE             MUX   10000     1000         0          100           10           10
+  NO_EQUIP          MUX   75000    10000         0         1000         1000         1000
+  INFEASIBLE        MUX 9999999  9999999         0      1000000      1000000      1000000
+
+%TABLE REQUIREMENTS
+% REQID+++ SOURCE++ DEST++++ BANDWIDTH
+  User     PORT     CC           40000
+  User     BOUR44   CC           40000
+  User     SHEF235  CC           40000
+  User     BIRM308  CC           40000
+  User     DIDS354  CC           40000
+  User     Midd1030 CC           40000
+  User     MOOR2    CC            6400
+  User     BIRM4    CC            6400
+  User     BRIG5    CC            6400
+  Host     CC       PORT         40000
+  Host     CC       BOUR44       40000
+  Host     CC       SHEF235      40000
+  Host     CC       BIRM308      40000
+  Host     CC       DIDS354      40000
+  Host     CC       Midd1030     40000
+  Host     CC       MOOR2         6400
+  Host     CC       BIRM4         6400
+  Host     CC       BRIG5         6400
+
+%TABLE PARMS
+% PARMS+++++++++++    VALUE+++++
+  ALPHA                        0
+  DPARM                      0.5
+  FDXFLAG                   FULL
+  RPARM                      0.5
+  SLACK                        0
+  UTIL                       0.6
+  WPARM                       10
+  DUPLEXITY                 FULL
+  UTILIZATION                0.6
+  LLVH                        LL
+  LINK_TYPE                  D64
+  BOX_TYPE                   MUX

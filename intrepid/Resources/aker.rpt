@@ -1,0 +1,29 @@
+Nodes
+NAME NODE_TYPE EQUIP+++++ COST++++ ADAPT_LS ADAPT_T1 ADAPT_T3 UTILIZATION 
+NYK  N         SMALL            10        3        0        0       0.018 
+LSA  N         SMALL            10        3        0        0       0.018 
+CHI  N         SMALL            10        8        0        0       0.038 
+HOU  N         SMALL            10        5        0        0      0.0256 
+PHI  N         SMALL            10        7        0        0       0.034 
+DET  N         SMALL            10        6        0        0        0.03 
+SDG  N         SMALL            10        5        0        0       0.026 
+DAL  C         SMALL            10        5        0        0       0.026 
+SAN  N         SMALL            10        6        0        0        0.03 
+PHO  N         SMALL            10        8        0        0       0.038 
+
+Links
+LINKID END0++ END1++ 
+LINK1  0    4    
+LINK2  1    6    
+LINK3  2    7    
+LINK4  3    7    
+LINK5  4    5    
+LINK6  5    2    
+LINK7  6    9    
+LINK8  8    3    
+LINK9  9    8    
+LINK10 1    2    
+LINK11 2    9    
+LINK12 3    4    
+LINK13 4    9    
+LINK14 7    8    

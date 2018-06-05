@@ -1,0 +1,238 @@
+*
+* Types:
+* X string used as a reference by other variables
+* C character string
+* L 32 bit signed integer
+* f Floating point
+*
+* Roles:
+* * must appear if this table is present
+* + Optional. Will be filled in.
+* d If not present will be filled in with default
+*
+*Variable     Table    Type Role  Default
+NAME          LOCATIONS   X   *      *
+TYPE          LOCATIONS   C   d      BOTH
+VCORD         LOCATIONS   L   +      *
+HCORD         LOCATIONS   L   +      *
+LATITUDE      LOCATIONS   C   +      *
+LONGITUDE     LOCATIONS   C   +      *
+IDD           LOCATIONS   L   d      1
+LOCAL_ATTACH  LOCATIONS   L   d      0
+SERVICE       LOCATIONS   f   d      0.0
+PARENT        LOCATIONS   C   *      *
+*
+* Table record:
+* M_andatory table 
+* W_rite into output file after conversion
+* U_nique table of this name allowed (ie not > 1)
+%LOCATIONS M W U
+SVTY          LINETYPES   X   *      *
+SPEEDIN       LINETYPES   L   *      *
+DUPLEXITY     LINETYPES   c   d      F
+TYPE          LINETYPES   C   *      *
+FIXED_COST    LINETYPES   f   d      1.0
+DIST_COST1    LINETYPES   f   d      1.0
+DIST_COST2    LINETYPES   f   d      1.0
+DIST1         LINETYPES   L   d      0
+REL           LINETYPES   f   d      .99
+CHANNELS      LINETYPES   L   d      1
+%LINETYPES M W U
+*MSGCLASS       MSGCLASS   X   *      *
+*FIRST_NODE     MSGCLASS   C   *      *
+*FIRST_BB_NODE  MSGCLASS   C   *      *
+*BB_NODE        MSGCLASS   C   *      *
+*LAST_BB_NODE   MSGCLASS   C   *      *
+*LAST_NODE      MSGCLASS   C   *      *
+*LINK           MSGCLASS   C   *      *
+*MSG_LEN        MSGCLASS   L   d      1000
+*PRIORITY       MSGCLASS   L   d      1
+** New fields for TNN RC111194
+*%MSGCLASS M W U
+*CLASS          TRAFCLASS  X   *      *
+*BURST_LEN      TRAFCLASS  L   d     1000
+*PEAK_RATE      TRAFCLASS  L   d     64000
+*BUFFER_CLASS   TRAFCLASS  C   d     NRT
+*MSG_LEN        TRAFCLASS  L   d     1000
+*%TRAFCLASS O W U
+REQID     REQUIREMENTS    V   +      *
+SOURCE    REQUIREMENTS    x   *      * NAME LOCATIONS
+DEST      REQUIREMENTS    x   *      * NAME LOCATIONS
+MSG_BYTES REQUIREMENTS    L   +      *
+MSG_BITS  REQUIREMENTS    L   +      *
+MSG_RATE  REQUIREMENTS    L   +      *
+BANDWIDTH REQUIREMENTS    L   +      *
+*BWUNITS   REQUIREMENTS    C   +      *
+*TRAFCLASS REQUIREMENTS    x   +      *        CLASS    TRAFCLASS
+*MSGCLASS  REQUIREMENTS    x   d      DEFAULT  MSGCLASS MSGCLASS
+*ARRDEP    REQUIREMENTS    c   +      *
+%REQUIREMENTS M W U
+END1      COSTMON         x   *      *  NAME LOCATIONS
+END2      COSTMON         x   *      *  NAME LOCATIONS
+VG        COSTMON         L   +      *
+V24       COSTMON         L   +      *
+V48       COSTMON         L   +      *
+V96       COSTMON         L   +      *
+V19       COSTMON         L   +      *
+V56       COSTMON         L   +      *
+D24       COSTMON         L   +      *
+D48       COSTMON         L   +      *
+D96       COSTMON         L   +      *
+D19       COSTMON         L   +      *
+D56       COSTMON         L   +      *
+T1        COSTMON         L   +      *
+T3        COSTMON         L   +      *
+F56V      COSTMON         L   +      *
+F56D      COSTMON         L   +      *
+F46T      COSTMON         L   +      *
+F128      COSTMON         L   +      *
+F256      COSTMON         L   +      *
+F384      COSTMON         L   +      *
+F512      COSTMON         L   +      *
+F768      COSTMON         L   +      *
+S24       COSTMON         L   +      *
+S48       COSTMON         L   +      *
+S96       COSTMON         L   +      *
+S19       COSTMON         L   +      *
+S56       COSTMON         L   +      *
+A24       COSTMON         L   +      *
+A48       COSTMON         L   +      *
+A96       COSTMON         L   +      *
+A19       COSTMON         L   +      *
+A56       COSTMON         L   +      *
+OC3       COSTMON         L   +      *
+OC12      COSTMON         L   +      *
+FIBER     COSTMON         L   +      *
+%COSTMON O N U
+END1      COSTINST        x   *      *  NAME LOCATIONS
+END2      COSTINST        x   *      *  NAME LOCATIONS
+VG        COSTINST        L   +      *
+V24       COSTINST        L   +      *
+V48       COSTINST        L   +      *
+V96       COSTINST        L   +      *
+V19       COSTINST        L   +      *
+V56       COSTINST        L   +      *
+D24       COSTINST        L   +      *
+D48       COSTINST        L   +      *
+D96       COSTINST        L   +      *
+D19       COSTINST        L   +      *
+D56       COSTINST        L   +      *
+T1        COSTINST        L   +      *
+T3        COSTINST        L   +      *
+F56V      COSTINST        L   +      *
+F56D      COSTINST        L   +      *
+F46T      COSTINST        L   +      *
+F128      COSTINST        L   +      *
+F256      COSTINST        L   +      *
+F384      COSTINST        L   +      *
+F512      COSTINST        L   +      *
+F768      COSTINST        L   +      *
+S24       COSTINST        L   +      *
+S48       COSTINST        L   +      *
+S96       COSTINST        L   +      *
+S19       COSTINST        L   +      *
+S56       COSTINST        L   +      *
+A24       COSTINST        L   +      *
+A48       COSTINST        L   +      *
+A96       COSTINST        L   +      *
+A19       COSTINST        L   +      *
+A56       COSTINST        L   +      *
+%COSTINST O N U
+BOX_MODEL     EQUIPMENT    X   *      *
+FUNCTION      EQUIPMENT    C   *      *
+BOX_COST      EQUIPMENT    L   *      *
+ADAPT_CST     EQUIPMENT    L   *      *
+CHAN_DELAY    EQUIPMENT    f   +      +
+MAX_LINKS_LS  EQUIPMENT    L   *      *
+MAX_LINKS_T1  EQUIPMENT    L   *      *
+MAX_LINKS_T3  EQUIPMENT    L   *      *
+*MAX_LINKS_LAN EQUIPMENT    L   *      *
+*MAX_LINKS_ATM EQUIPMENT    L   *      *
+*MAX_LINKS_WDM EQUIPMENT    L   *      *
+REL           EQUIPMENT    f   d      .99
+DEFAULT       EQUIPMENT    f   *      *
+IP            EQUIPMENT    f   +      *
+DLS           EQUIPMENT    f   +      *
+APPN          EQUIPMENT    f   +      *
+SNA           EQUIPMENT    f   +      *
+SNABDRY       EQUIPMENT    f   +      *
+IPX           EQUIPMENT    f   +      *
+RT1           EQUIPMENT    f   +      *
+RT2           EQUIPMENT    f   +      *
+NRT           EQUIPMENT    f   +      *
+%EQUIPMENT M N U
+*PARMS        ANTDPARMS   C    *      *
+*VALUE        ANTDPARMS   C    *      *
+*%ANTDPARMS O N U
+PARMS        PARMS       C    *      *
+VALUE        PARMS       C    *      *
+%PARMS O N U
+PRF_PARMS    PROFILE     C   *       *
+PRF_VALUE    PROFILE     C   *       *
+%PROFILE O N U
+DNLABEL      DESNODES    C   *      *
+DNTYPE       DESNODES    c   *      *
+XLABEL       DESNODES    L   d      5
+YLABEL       DESNODES    L   d      5
+XDISPLAY     DESNODES    L   +      *
+YDISPLAY     DESNODES    L   +      *
+DMODEL       DESNODES    C   +      *
+DNCOST       DESNODES    L   +      *
+NCOS         DESNODES    L   d      0
+NDELAY       DESNODES    f   d      0
+NADAPT       DESNODES    L   d      1
+%DESNODES O W U
+DEND1        DESIGN      V   *      *
+DEND2        DESIGN      V   *      *
+LINKID       DESIGN      V   *      *
+DLNTY        DESIGN      L   *      *
+DMULT        DESIGN      L   *      *
+DHOPS        DESIGN      L   +      *
+DMONTHCST    DESIGN      L   *      *
+DTGCAP       DESIGN      L   *      *
+COS12        DESIGN      L   +      *
+COS21        DESIGN      L   +      *
+UTIL12       DESIGN      f   +      *
+UTIL21       DESIGN      f   +      *
+LOAD12       DESIGN      f   +      *
+LOAD21       DESIGN      f   +      *
+OUTIL12      DESIGN      f   +      *
+OUTIL21      DESIGN      f   +      *
+MAND_LK      DESIGN      c   d      N
+LDELAY12     DESIGN      f   d      0
+LDELAY21     DESIGN      f   d      0
+%DESIGN O W U
+PARMS        DPARMS      C   *      *
+VALUE        DPARMS      C   *      *
+%DPARMS O W U
+ID           ROUTES      V   +      *
+SOURCE       ROUTES      V   *      *
+DEST         ROUTES      V   *      *
+ARC1         ROUTES      V   d      -
+ARC2         ROUTES      V   d      -
+ARC3         ROUTES      V   d      -
+ARC4         ROUTES      V   d      -
+ARC5         ROUTES      V   d      -
+MORE         ROUTES      c   d      N
+%ROUTES O W U
+SERVICE      SERVICES    X   *      *
+MSGCLASS     SERVICES    x   d      DEFAULT   MSGCLASS MSGCLASS
+MSG_SIZE_IN  SERVICES    L   d      1000
+MSG_SIZE_OUT SERVICES    L   d      1000
+%SERVICES     O W U
+REQID         SERVICE_REQUIREMENTS    V   +      *
+SOURCE        SERVICE_REQUIREMENTS    x   *      * NAME LOCATIONS
+SERVICE       SERVICE_REQUIREMENTS    x   *      * SERVICE SERVICES
+BANDWIDTH_IN  SERVICE_REQUIREMENTS    L   *      *
+MSG_BITS_IN   SERVICE_REQUIREMENTS    L   +      * 10 1000000
+BANDWIDTH_OUT SERVICE_REQUIREMENTS    L   *      *
+MSG_BITS_OUT  SERVICE_REQUIREMENTS    L   +      * 10 1000000
+SERVER_LOAD   SERVICE_REQUIREMENTS    f   *      *
+%SERVICE_REQUIREMENTS O W U
+BOX_MODEL     SERVERS    X   *      *
+BOX_COST      SERVERS    L   *      *
+DEFAULT       SERVERS    f   *      *
+DBASE         SERVERS    f   *      *
+SERVICE1      SERVERS    f   +      *
+SERVICE2      SERVERS    f   +      *
+%SERVERS  O W U

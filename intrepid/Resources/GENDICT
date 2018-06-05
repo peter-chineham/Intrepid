@@ -1,0 +1,40 @@
+NAME          LOCATIONS   X   *      *
+TYPE          LOCATIONS   C   d      BOTH
+VCORD         LOCATIONS   L   +      *
+HCORD         LOCATIONS   L   +      *
+LATITUDE      LOCATIONS   C   +      *
+LONGITUDE     LOCATIONS   C   +      *
+IDD           LOCATIONS   L   d      1
+LOCAL_ATTACH  LOCATIONS   L   d      0
+SERVICE       LOCATIONS   f   d      0.0
+PARENT        LOCATIONS   C   *      *
+POPULATION    LOCATIONS   L   +      *
+LEVEL         LOCATIONS   L   +      *
+TRAFIN        LOCATIONS   L   +      *
+TRAFOUT       LOCATIONS   L   +      *
+%LOCATIONS M W U
+SVTY          LINETYPES   X   *      *
+SPEEDIN       LINETYPES   L   *      *
+DUPLEXITY     LINETYPES   c   d      F
+TYPE          LINETYPES   C   *      *
+FIXED_COST    LINETYPES   f   d      1.0
+DIST_COST1    LINETYPES   f   d      1.0
+DIST_COST2    LINETYPES   f   d      1.0
+DIST1         LINETYPES   L   d      0
+REL           LINETYPES   f   d      .99
+CHANNELS      LINETYPES   L   d      1
+%LINETYPES M W U
+MSGCLASS       MSGCLASS   C   *      *
+FIRST_NODE     MSGCLASS   C   *      *
+FIRST_BB_NODE  MSGCLASS   C   *      *
+BB_NODE        MSGCLASS   C   *      *
+LAST_BB_NODE   MSGCLASS   C   *      *
+LAST_NODE      MSGCLASS   C   *      *
+LINK           MSGCLASS   C   *      *
+MSG_LEN        MSGCLASS   L   +      +
+PRIORITY       MSGCLASS   L   d      1
+%MSGCLASS M W U
+PARMS        ANTDPARMS   C    *      *
+VALUE        ANTDPARMS   C    *      *
+%ANTDPARMS M N U
+

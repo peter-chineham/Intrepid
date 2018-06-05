@@ -1,0 +1,131 @@
+%TABLE LOCATIONS
+% NAME++++ VCORD HCORD PARENT++
+  NYK      5004   1405 NYK     
+  LSA      9217   7856 LSA     
+  CHI      5986   3426 CHI     
+  HOU      8938   3536 HOU     
+  PHI      5241   1466 PHI     
+  DET      5536   2829 DET     
+  SDG      9466   7644 SDG     
+  DAL      8435   4035 DAL     
+  SAN      9225   4063 SAN     
+  PHO      9130   6738 PHO     
+
+%TABLE LINETYPES
+% SVTY SPEEDIN++ UNITS DUPLEXITY TYPE FIXED_COST DIST1 DIST_COST1 DIST_COST2
+  AKER     56000   bps         F   LS       1000  9999          3          0
+
+%TABLE EQUIPMENT
+% BOX_MODEL+++ FUNCTION DEFAULT BOX_COST ADAPT_CST MAX_LINKS_LS MAX_LINKS_T1 MAX_LINKS_T3
+  SMALL             MUX    1000       10         0           10            0            0
+  MEDIUM            MUX    5000      100         0           10           10            0
+  LARGE             MUX   10000     1000         0          100           10           10
+  NO_EQUIP          MUX   75000    10000         0         1000         1000         1000
+  INFEASIBLE        MUX 9999999  9999999         0      1000000      1000000      1000000
+
+%TABLE REQUIREMENTS
+% SOURCE++ DEST++++ BANDWIDTH
+  NYK      LSA           8000
+  NYK      CHI           8000
+  NYK      HOU           8000
+  NYK      PHI           8000
+  NYK      DET           8000
+  NYK      SDG           8000
+  NYK      DAL           8000
+  NYK      SAN           8000
+  NYK      PHO           8000
+  LSA      NYK           8000
+  LSA      CHI           8000
+  LSA      HOU           8000
+  LSA      PHI           8000
+  LSA      DET           8000
+  LSA      SDG           8000
+  LSA      DAL           8000
+  LSA      SAN           8000
+  LSA      PHO           8000
+  CHI      NYK           8000
+  CHI      LSA           8000
+  CHI      HOU           8000
+  CHI      PHI           8000
+  CHI      DET           8000
+  CHI      SDG           8000
+  CHI      DAL           8000
+  CHI      SAN           8000
+  CHI      PHO           8000
+  HOU      NYK           8000
+  HOU      LSA           8000
+  HOU      CHI           8000
+  HOU      PHI           8000
+  HOU      DET           8000
+  HOU      SDG           8000
+  HOU      DAL           8000
+  HOU      SAN           8000
+  HOU      PHO           8000
+  PHI      NYK           8000
+  PHI      LSA           8000
+  PHI      CHI           8000
+  PHI      HOU           8000
+  PHI      DET           8000
+  PHI      SDG           8000
+  PHI      DAL           8000
+  PHI      SAN           8000
+  PHI      PHO           8000
+  DET      NYK           8000
+  DET      LSA           8000
+  DET      CHI           8000
+  DET      HOU           8000
+  DET      PHI           8000
+  DET      SDG           8000
+  DET      DAL           8000
+  DET      SAN           8000
+  DET      PHO           8000
+  SDG      NYK           8000
+  SDG      LSA           8000
+  SDG      CHI           8000
+  SDG      HOU           8000
+  SDG      PHI           8000
+  SDG      DET           8000
+  SDG      DAL           8000
+  SDG      SAN           8000
+  SDG      PHO           8000
+  DAL      NYK           8000
+  DAL      LSA           8000
+  DAL      CHI           8000
+  DAL      HOU           8000
+  DAL      PHI           8000
+  DAL      DET           8000
+  DAL      SDG           8000
+  DAL      SAN           8000
+  DAL      PHO           8000
+  SAN      NYK           8000
+  SAN      LSA           8000
+  SAN      CHI           8000
+  SAN      HOU           8000
+  SAN      PHI           8000
+  SAN      DET           8000
+  SAN      SDG           8000
+  SAN      DAL           8000
+  SAN      PHO           8000
+  PHO      NYK           8000
+  PHO      LSA           8000
+  PHO      CHI           8000
+  PHO      HOU           8000
+  PHO      PHI           8000
+  PHO      DET           8000
+  PHO      SDG           8000
+  PHO      DAL           8000
+  PHO      SAN           8000
+
+%TABLE PARMS
+% PARMS+++++++++++    VALUE+++++
+  ALPHA                        0
+  BIFURCATE                    Y
+  BOX_TYPE                   MUX
+  DUPLEXITY                 FULL
+  LINK_TYPE                 AKER
+  LLVH                        VH
+  RPARM                      0.5
+  SLACK                      0.2
+  TREE_BIAS                  0.5
+  UTILIZATION                0.6
+  WPARM                        2

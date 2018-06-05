@@ -1,0 +1,52 @@
+DNLABEL      DESNODES    C   *      *
+DNTYPE       DESNODES    c   *      *
+XLABEL       DESNODES    L   d      5
+YLABEL       DESNODES    L   d      5
+XDISPLAY     DESNODES    L   +      *
+YDISPLAY     DESNODES    L   +      *
+DMODEL       DESNODES    C   +      *
+DNCOST       DESNODES    L   +      *
+NCOS         DESNODES    L   d      0
+NDELAY       DESNODES    f   d      0
+NADAPT       DESNODES    L   d      1
+* Change 101293 for the reliability analysis
+NODE_REL_VECT DESNODES   f   +      *
+%DESNODES M W U
+DEND1        DESIGN      V   *      *
+DEND2        DESIGN      V   *      *
+LINKID       DESIGN      V   *      *
+DLNTY        DESIGN      L   *      *
+DMULT        DESIGN      L   *      *
+DHOPS        DESIGN      L   +      *
+DMONTHCST    DESIGN      L   *      *
+DTGCAP       DESIGN      L   *      *
+COS12        DESIGN      L   +      *
+COS21        DESIGN      L   +      *
+UTIL12       DESIGN      f   +      *
+UTIL21       DESIGN      f   +      *
+LOAD12       DESIGN      f   +      *
+LOAD21       DESIGN      f   +      *
+OUTIL12      DESIGN      f   +      *
+OUTIL21      DESIGN      f   +      *
+MAND_LK      DESIGN      c   d      N
+LDELAY12     DESIGN      f   d      0
+LDELAY21     DESIGN      f   d      0
+* Change 101293 for the reliability analysis
+LINK_REL_VECT DESIGN     f   +      *
+%DPARMS M W U
+PARMS        DPARMS      C   *      *
+VALUE        DPARMS      C   *      *
+%ROUTES O W U
+ID           ROUTES      V   +      *
+SOURCE       ROUTES      V   *      *
+DEST         ROUTES      V   *      *
+ARC1         ROUTES      V   d      -
+ARC2         ROUTES      V   d      -
+ARC3         ROUTES      V   d      -
+ARC4         ROUTES      V   d      -
+ARC5         ROUTES      V   d      -
+MORE         ROUTES      c   d      N
+%RCBS O W U
+ROUTE        RCBS        V   *      *
+REQUIREMENT  RCBS        V   *      *
+FRACTION     RCBS        f   d      1

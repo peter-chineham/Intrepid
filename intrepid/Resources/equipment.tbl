@@ -1,0 +1,11 @@
+* Required: BOX_MODEL, FUNCTION, BOX_COST, ADAPT_CST, MAX_LINKS_LS, MAX_LINKS_T1, MAX_LINKS_T3, MAX_LINKS_LAN, DEFAULT
+* Optional: IP, DLS, APPN, SNA, SNABDRY, IPX
+* FUNCTION = ROUTER, MUX
+%TABLE EQUIPMENT
+% BOX_MODEL+++ FUNCTION DEFAULT BOX_COST ADAPT_CST MAX_LINKS_LS MAX_LINKS_T1 MAX_LINKS_T3
+  SMALL             MUX    1000       10         0           10            0            0
+  MEDIUM            MUX    5000      100         0           10           10            0
+  LARGE             MUX   10000     1000         0          100           10           10
+  NO_EQUIP          MUX   75000    10000         0         1000         1000         1000
+  INFEASIBLE        MUX 9999999  9999999         0      1000000      1000000      1000000
+

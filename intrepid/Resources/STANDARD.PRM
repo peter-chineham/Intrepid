@@ -1,0 +1,162 @@
+%TABLE STDPARMS
+%PARM+++++++++++++++ TYPE CATEGORY RANGE+++++++++++++++++++++++++++++++++++++++++++++++++++++++ DEFAULT+++++++++
+ SEARCH_MODE         S        L    FULL FAST                                                    FULL
+ CLUSTER_MODE        S        L    THRESH KMEANS NEW_KMEANS  NEW_KMEANS_2 AUTO                  THRESH
+ INITIAL_TOPOLOGY    S        D    TREE TOUR_F TOUR_N TREE_2 TOUR_N_SIMP                        TREE
+ ACCESS_TOPOLOGY     S        D    STAR LOOP LOOP3 LOOP4 LOOP5 EW SHARMA MSLA                   STAR
+ SEQ_METHOD          S        D    OLD NEW                                                      OLD
+ ONE_SPEED_BKBN      S        L    TRUE FALSE                                                   FALSE
+ LINK_TYPE           S        D    D96 D56 T1 T3 D64 E1 OC3 OC12                                D56
+ ACCESS_LINK_TYPE    S        D    D96 D56 T1 T3 D64 E1 OC3 OC12 FIBER                          D56
+ UTILIZATION         F        D    0.01 1                                                       0.60
+ BOX_UTILIZATION     F        D    0 1                                                          0.50
+ COST_FILTER         I        L    1 1000000                                                    30000
+ HOPS_FILTER         I        L    1 1000000                                                    100
+ COST                I        C    0 100000000                                                  0
+ MESSAGE_LEN         I        M    1 1000000                                                    8000
+ UTILHI              F        M    0 1000                                                       1.000
+ DUPLEXITY           S        D    FULL HALF                                                    FULL
+ CHANNEL_DELAY       F        D    0 1                                                          .005
+ LINK_REL            F        M    0 1                                                          .99
+ NODE_REL            F        M    0 1                                                          .99
+ BAL_MODE            S        L    OPT INC RESIZE                                               OPT
+ BAL_UTIL_HI         F        L    0 1                                                          .6
+ BAL_UTIL_LO         F        L    0 1                                                          .3
+ BAL_RESIZE_MODE     S        L    INC MULT OPT                                                 OPT
+ CHANNELIZED         S        D    Y N                                                           N
+* Can't get the existing files to run without these lines
+* They aren't necessarily parms we really want here.
+
+ NCLST               I        D    0 1000                                                       3
+ TREE_BIAS           F        D    0 1                                                          0.5
+ ALPHA               F        D    0 1                                                          0
+ SLACK               F        D    0 1                                                          0
+ RPARM               F        D    0 1                                                          0.4000
+* DPARM was used by AKER Mentor instead of TREE_BIAS
+* DPARM               F        D    0 1                                                          0.5000
+ WPARM               F        D    0 1000                                                       1.0000
+ BIFURCATE           S        L    Y N                                                          N
+*FIRST_NODE          I        D    0 1000                                                       1
+ FIRST_NODE          C        D    00000 ZZZZZ                                                  -
+ FIRST_NODE_SHARMA   C        D    00000 ZZZZZ                                                  -
+ DESIGN_TYPE         S        D    BBNS TCPIP APPN LIGHTWAVE GENERIC ATM+WDM TREE               TCPIP
+ BOX_TYPE            S        D    GENERIC MUX ROUTER SNA                                       GENERIC
+ NODE_LABEL_LENGTH   I        L    2 19                                                         19
+
+* --------------------
+* PARMS needed for ADD
+* --------------------
+ BIAS                F        D    0 1                                                          0.5
+ FACTOR              F        D    0 1                                                          0.5
+
+* --------------------
+* PARMS needed for NED
+* --------------------
+
+ LINKID              C        L    00000 ZZZZZ                                                  NewLink
+ LINK_MULT           I        L    1 100                                                        2
+ ARC1_LENGTH         I        L    1 10000                                                      1
+ ARC2_LENGTH         I        L    1 10000                                                      1
+ NODE_EQUIPMENT      S        L    00000 ZZZZZ                                                  I
+ NODE_LENGTH         I        L    0 10000                                                      1
+ NODE_TYPE           S        L    N E                                                          E
+
+ PA_NETTYPE          S        L    MUX QUEUED                                                   QUEUED
+ PA_ROUTE_STORE      S        L    BKBN ALL                                                     ALL
+ PA_QUEUED_LENGTH    S        L    MINHOP MINDIST                                               MINDIST
+ PA_QUEUED_LOADMODE  S        L    SIMULATE AVERAGE F_FIT F_FITM CONGESTION F_FITSIM F_FITMSIM  AVERAGE
+ PA_CR_LOADMODE      S        L    SIMULATE AVERAGE F_FIT F_FITM CONGESTION F_FITSIM F_FITMSIM  AVERAGE
+ PA_LOAD_SCALE       F        P    0.01 100                                                     1.0
+ PA_LIGHT_ROUTES     S        L    MINHOP MINHOP+1                                              MINHOP
+ PA_GEN_NEW_ROUTES   S        P    Y N                                                          Y
+*PA_CHROMATICS       S             MONO MULTI                                                   MONO
+*CHANNEL_NUMBER      I        L    0 100                                                        0
+ PA_MUX_LOADMODE     S        L    FIXED_MINHOP FLOWSENS_MINHOP                                 FIXED_MINHOP
+
+* --------------------
+* PARMS needed for distance-based costing   (AK111993)
+* --------------------
+
+ COSTPARM            S        G    COST DIST1 DIST2 DIST3                                       COST
+ LLVH                S        G    LL VH                                                        VH
+
+* --------------------
+* PARMS needed for NETGEN
+* --------------------
+*PARM+++++++++++++++ TYPE CATEGORY RANGE+++++++++++++++++++++                                   DEFAULT+++++++++
+ NG_GEN_COSTS        S        G    Y N P K1 K2 K3 K4 K5 K6 K7                                   Y
+ NG_GEN_REQS         S        G    Y N                                                          Y
+ NG_DIST_OFFSET      F        G    0 1                                                          0.1
+ NG_DIST_POWER       F        G    0 5                                                          1.0
+ NG_POP_OFFSET       F        G    0 1                                                          0.1
+ NG_POP_POWER        F        G    0 5                                                          1.0
+ NG_TOT_REQ          I        G    1  10000000                                                  1000
+ NG_RAND_FRACT       F        G    0 1                                                          0
+ NG_L11              F        G    0 100                                                        1.0
+ NG_L12              F        G    0 100                                                        0.0
+ NG_L13              F        G    0 100                                                        0.0
+ NG_L21              F        G    0 100                                                        0.0
+ NG_L22              F        G    0 100                                                        0.0
+ NG_L23              F        G    0 100                                                        0.0
+ NG_L31              F        G    0 100                                                        0.0
+ NG_L32              F        G    0 100                                                        0.0
+ NG_L33              F        G    0 100                                                        0.0
+ NG_NORMALIZE        S        G    TOTAL ROW ROW/COL                                            TOTAL
+ NG_DIAG             S        G    Y N                                                          N
+ NG_TRAFFIC          C        G    00000 ZZZZZ                                                  DEFAULT
+ NG_COSTS            C        G    00000 ZZZZZ                                                  DEFAULT
+ NG_COSTMON-INT      C        G    00000 ZZZZZ                                                  COSTINT.TBL
+ NG_COSTMON-NAT      C        G    00000 ZZZZZ                                                  COSTNAT.TBL
+ NG_EQUIPMENT        C        G    00000 ZZZZZ                                                  EQUIP.TBL
+ NG_MSGCLASS         C        G    00000 ZZZZZ                                                  MSGCLASS.TBL
+ NG_PARMS            C        G    00000 ZZZZZ                                                  ANTDPARM.TBL
+*NG_PROFILE          C        G    00000 ZZZZZ                                                  PROFILE.TBL
+ NG_INP_FILE         C        G    00000 ZZZZZ                                                  DEFAULT
+ NG_NREQ             I        G    0     100000                                                 0
+ NG_RHT              I        G    0 100000                                                     0
+ NG_PONEHOP          F        G    0 1                                                          .5
+* --------------------
+* New parms for genning services RC051195
+* --------------------
+ NG_GEN_SERVICES     S        G    Y N                                                          N
+ NG_TOT_SERVICES     F        G    1  10000000                                                  1000
+ NG_TOT_SERVFLOW_IN  F        G    1  100000000                                                 10000
+ NG_TOT_SERVFLOW_OUT F        G    1  100000000                                                 10000
+ NG_SERV_POP_POWER   F        G    0  10                                                        1
+ NG_SERVICE_TYPE     S        G    00000 ZZZZZ                                                  DEFAULT
+ NG_SERVERS          S        G    00000 ZZZZZ                                                  SERVER.TBL
+ NG_SERVICES         S        G    00000 ZZZZZ                                                  SERVICES.TBL
+
+* --------------------
+* PARMS needed for incrment (RC020994)
+* --------------------
+
+*PARM++++++++++++++  TYPE          RANGE+++++++++++++++++++++                                   DEFAULT+++++++++
+ INCRMENT_NODE_SET   S        C    ALL BKBN                                                     ALL
+ INCRMENT_DIVISOR    F        C    1 10                                                         10
+
+* --------------------
+* PARMS needed for TNN analyzer (RC111194)
+* --------------------
+
+*PARM++++++++++++++  TYPE CATEGORY RANGE+++++++++++++++++++++++++++++++++++++++++++++++++++++++ DEFAULT+++++++++
+ PROB_LOSS            F       L     .000000001 .1                                                  .0000001
+ BUILD_FROM_TRAF      S       L     TRUE FALSE                                                     FALSE
+ PRIN_ROUTE_UTIL      F       L     0.1  0.95                                                      .7
+ SEC_ROUTE_UTIL       F       L     0.1  0.95                                                      .6
+ GEN_OVERHEAD         S       L     TRUE FALSE                                                     FALSE
+
+* --------------------
+* PARMS needed for Esau-Williams
+* --------------------
+
+*PARM+++++++++++++++ TYPE CATEGORY RANGE+++++++++++++++++++++++++++++++++++++++++++++++++++++++ DEFAULT+++++++++
+  EW_LINK_TYPE         S       L     D96 D56 D64 F128 F256 T1 T3 D64 E1 OC3 OC12 FIBER              D96
+  EW_UTILIZATION       F       L     .01 .99                                                           .5
+  EW_MAX_DEPTH         S       L     0 2 3 4 5 6 7 8                                                   0
+  MSLA_UPGRADE_FRACT   F       L     0 1                                                               1
+  TRACE                S       L     Y N                                                               N
+
+*PARM+++++++++++++++ TYPE CATEGORY RANGE+++++++++++++++++++++++++++++++++++++++++++++++++++++++ DEFAULT+++++++++
+  VIDEO_MCAST_MODE     S       L     OLD NEW1                                                       OLD
+

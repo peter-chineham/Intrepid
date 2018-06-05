@@ -1,0 +1,7 @@
+PARM         STDPARMS   C    *      *
+RANGE        STDPARMS   V    *      *
+TYPE         STDPARMS   c    *      *
+DEFAULT      STDPARMS   C    *      *
+CATEGORY     STDPARMS   c    *      *
+%STDPARMS M N U
+
